@@ -22,8 +22,10 @@ final class SortedLinkedList implements IteratorAggregate, Countable, JsonSerial
     private const TYPE_INT = 'int';
     private const TYPE_STRING = 'string';
 
+    /** @var Node<int|string>|null */
     private ?Node $head = null;
 
+    /** @var Node<int|string>|null */
     private ?Node $tail = null;
     private int $size = 0;
 
@@ -294,7 +296,7 @@ final class SortedLinkedList implements IteratorAggregate, Countable, JsonSerial
     }
 
     /**
-     * @param list<int|string> $values
+     * @param list<mixed> $values
      * @return 'int'|'string'
      */
     private static function inferTypeOrThrow(array $values): string
@@ -333,7 +335,6 @@ final class SortedLinkedList implements IteratorAggregate, Countable, JsonSerial
             return $a <=> $b;
         }
 
-        return strcmp($a, $b);
+        return strcmp((string) $a, (string) $b);
     }
 }
-

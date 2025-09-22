@@ -163,6 +163,7 @@ final class SortedLinkedListTest extends TestCase
     public function testFromArrayRejectsNonIntOrString(): void
     {
         $this->expectException(InvalidArgumentException::class);
+        // @phpstan-ignore-next-line intentional invalid type for negative test
         SortedLinkedList::fromArray([1.5]);
     }
 
@@ -205,6 +206,7 @@ final class SortedLinkedListTest extends TestCase
     public function testFromIterableWithTypeRejectsInvalidDeclaredType(): void
     {
         $this->expectException(InvalidArgumentException::class);
+        // @phpstan-ignore-next-line intentional invalid declared type for negative test
         SortedLinkedList::fromIterableWithType([1,2,3], 'float');
     }
 
