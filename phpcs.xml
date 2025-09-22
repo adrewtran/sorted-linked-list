@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="SortedLinkedList Standard">
+    <description>Basic coding standard for the SortedLinkedList library.</description>
+    <file>src</file>
+    <file>tests</file>
+    <rule ref="PSR12"/>
+    <arg name="colors" />
+</ruleset>

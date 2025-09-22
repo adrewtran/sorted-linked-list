@@ -1,0 +1,10 @@
+services:
+  app:
+    image: antran/sorted-linked-list:local
+    build:
+      context: .
+      dockerfile: _docker/app/Dockerfile
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: bash -lc "composer install && composer test"
